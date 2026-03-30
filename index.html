@@ -12,12 +12,47 @@
             background-color: #6f08a6;
             color: #54bf34;
             font-size: 30px;
-        
+        }
+
+        .tab {
+            display: none;
+        }
+
+        .tab.active {
+            display: block;
         }
     </style>
 </head>
 <body>
+    <header>
+        <nav>
+            <button data-target="tab1"> 1 </button>
+            <button data-target="tab2"> 2 </button>
+        </nav>
+    </header>
+    <div class="tabs-container">
+        <div id="tab1" class="tab active">Вкладка 1 </div>
+        <div id="tab2" class="tab">Вкладка 2 </div>
+    </div>
+    
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2_selxJvb9hFz_zHuT-6r9N5k_Cqx0wql6Q&s" height="500" width="500"
     <span class="piska"><h1>просто студент второго курса по специальности программиста</h1></span>
+    <script>
+        document.querySelectorAll('button[data-target]').forEach(button => {
+            button.addEventListener('click', event => {
+                document.querySelectorAll('.tab').forEach(tab => {
+                    console.log([tab.id, button])
+                    tab.classList.toggle('active', tab.id == button.dataset.target);
+                })
+            })
+        })
+
+        // document.querySelectorAll('.tab').forEach(tab => {
+        //     tab.addEventListener('click', (event) => {
+        //         document.querySelectorAll('.active').forEach(el => el.classList.remove('active'));
+        //             event.currentTarget.classList.add('active');
+        //     });
+        // });
+    </script>
 </body>
 </html>
