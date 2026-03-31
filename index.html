@@ -6,12 +6,33 @@
     <title>Document</title>
      <style>
         body{
-            background-image: url("https://i.redd.it/2jl5dnfww5f41.png");
+            background-image: url("https://img.freepik.com/premium-photo/abstract-black-wall-texture-pattern-background-wide-panorama-picture-black-wall-texture-rough-background-dark-concrete-floor-old-grunge-background-with-black_263512-7296.jpg?semt=ais_hybrid");
         }
         h1{
-            background-color: #6f08a6;
-            color: #54bf34;
+            background-color:aliceblue;
             font-size: 30px;
+            text-align: center;
+        }
+        
+        nav button {
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav button:hover {
+            background-color: gray ;
+        }
+
+        nav button:active {
+            transform: scale(0.98);
         }
 
         .tab {
@@ -20,6 +41,17 @@
 
         .tab.active {
             display: block;
+        }
+        
+        b1{
+            color: aliceblue;
+            font-size: 18px;
+        }
+        h2{
+            color: aliceblue;
+        }
+        p{
+            color: aliceblue;
         }
     </style>
 </head>
@@ -30,29 +62,36 @@
             <button data-target="tab2"> 2 </button>
         </nav>
     </header>
-    <div class="tabs-container">
-        <div id="tab1" class="tab active">Вкладка 1 </div>
-        <div id="tab2" class="tab">Вкладка 2 </div>
-    </div>
     
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2_selxJvb9hFz_zHuT-6r9N5k_Cqx0wql6Q&s" height="500" width="500"
-    <span class="piska"><h1>просто студент второго курса по специальности программиста</h1></span>
+    <div class="tabs-container">
+        <div id="tab1" class="tab active">
+            <h2>Привет!</h2>
+                <p>Это первая вкладка с предствалением</p>
+                <img src="https://i.pinimg.com/736x/cd/ea/20/cdea2091fd89e2b4419573b53fa341b0.jpg"
+ width="300px" height="300px"
+            <span class="piska"><h1>Меня зовут Рубик и я просто студент второго курса по специальности программиста</h1></span>
+    <b1> </b1></div>
+        
+    <div id="tab2" class="tab">
+        <h2>А здесь можете почитать про меня</h2>
+            <img src="https://i.pinimg.com/736x/ce/94/bd/ce94bd7980a9dc35674059f3281b3841.jpg"
+ width="300" height="300">
+                <h1>Я учусь в колледже информационных технологий ITHUB!</h1>
+            <b1></b1></div>
+        </div>
+    
     <script>
         document.querySelectorAll('button[data-target]').forEach(button => {
             button.addEventListener('click', event => {
                 document.querySelectorAll('.tab').forEach(tab => {
-                    console.log([tab.id, button])
-                    tab.classList.toggle('active', tab.id == button.dataset.target);
+                    console.log([tab.id
+, button])
+                    tab.classList.toggle('active', tab.id
+ == button.dataset.target
+);
                 })
             })
         })
-
-        // document.querySelectorAll('.tab').forEach(tab => {
-        //     tab.addEventListener('click', (event) => {
-        //         document.querySelectorAll('.active').forEach(el => el.classList.remove('active'));
-        //             event.currentTarget.classList.add('active');
-        //     });
-        // });
     </script>
 </body>
 </html>
