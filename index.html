@@ -54,7 +54,38 @@
             color: aliceblue;
         }
         
-       
+        .big-picture-wrapper {
+            position: fixed;
+            top: -100%; 
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.9); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: top 0.5s ease-in-out; 
+            z-index: 9999;
+        }
+
+        .big-picture-wrapper.show {
+            top: 0; 
+        }
+
+        .big-picture-wrapper img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            cursor: pointer;
+            font-size: 24px;
+        }
+    
 </style>
 
     </style>
@@ -75,23 +106,28 @@
         <div id="tab1" class="tab active">
             <h2>Привет!</h2>
                 <p>Это первая вкладка с предствалением</p>
-                <img src="https://i.pinimg.com/736x/cd/ea/20/cdea2091fd89e2b4419573b53fa341b0.jpg" width="300px" height="300px"
-            <span class="piska"><h1>Меня зовут Рубик и я просто студент второго курса по специальности программиста</h1></span>
-    <b1></b1></div>
+                    <button id="showBtn">Показать картину</button>
+                        <div class="big-picture-wrapper" id="picWrapper">
+                    <span class="close-btn" id="closeBtn">&times;</span>
+            <img src="https://grizly.club/uploads/posts/2022-12/1671044123_grizly-club-p-vse-yeralash-png-4.jpg" alt="Картина">
+        </div>
+        <img src="https://i.pinimg.com/736x/cd/ea/20/cdea2091fd89e2b4419573b53fa341b0.jpg" width="300px" height="300px"
+        <span class="piska"><h1>Меня зовут Рубик и я просто студент второго курса по специальности программиста</h1></span>
+        <b1></b1></div>
         
     
     <div id="tab2" class="tab">
         <h2>Здесь можете почитать про меня</h2>
             <img src="https://i.pinimg.com/736x/ce/94/bd/ce94bd7980a9dc35674059f3281b3841.jpg"width="300" height="300">
                 <h1>Я учусь в колледже информационных технологий ITHUB!</h1>
-                <img src="https://gifs.obs.ru-moscow-1.hc.sbercloud.ru/d054b99e270a9e75805627444a6a2fd0de7247ada1761ab3de82c89a5b7382ba.webp" alt="Описание анимации">
             <b1></b1></div>
         </div>
         
         
     <div id="tab3" class="tab">
-        <h2>Если нажмешь то ты писька</h2>
-            <button id="changeColor">Не ножимай</button>
+        <h2>ЕСЛИ НАЖМЕШЬ ТО БУДЕТ ЧТОТО ПЛАХОЕ</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFcUZxKeYVNHFaUoIdcdX3wEs8zhUGqlevIg&s">
+            <button id="changeColor">О НЭД НЕ ДЕЛАЙ ЕТОГО</button>
                 <b1></b1></div>
     
     <script>
@@ -105,9 +141,23 @@
         })
         const button = document.getElementById('changeColor')
             button.addEventListener('click', () => {
-                document.body.style.backgroundImage = "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBKcnAbidKJRhb9M-ktlV1jAwDbzETADGSKw&s')"
-                document.body.style.backgroundSize = "2600px 1400px";
+                document.body.style.backgroundImage = "url('https://i.pinimg.com/736x/d7/6b/53/d76b536a8981a4a2c246efa162ac0a1a.jpg')"
+                document.body.style.backgroundRepeat = 'no-repeat';
+                document.body.style.backgroundSize = 'cover';
+                document.body.style.backgroundAttachment = 'fixed';
+                document.body.style.backgroundPosition = 'center';
+
     });
+        const btn = document.getElementById('showBtn');
+            const wrapper = document.getElementById('picWrapper');
+            const close = document.getElementById('closeBtn');
+            btn.addEventListener('click', () => {
+                wrapper.classList.add('show');
+    });
+        close.addEventListener('click', () => {
+            wrapper.classList.remove('show');
+    });
+      
     </script>
 </body>
 </html>
